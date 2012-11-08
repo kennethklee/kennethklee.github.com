@@ -27,6 +27,15 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
+        <code>
+        function rot13(str) {
+          return str.replace(/([a-zA-Z])/g, function(letter) {var c = letter.charCodeAt(); var b = c <= 90 ? 65 : 97; c -= b; return String.fromCharCode(((c + 13) % 26) + b);});
+        }
+        String.prototype.reverse = function () { var result = []; this.split(' ').forEach(function(word) {result.push(word.split('').reverse().join(''))}); return result.join(' ');};
+
+        function crypt(str) {return rot13(str.reverse());}
+        </code>
+
         <h3>Welcome to GitHub Pages.</h3>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
